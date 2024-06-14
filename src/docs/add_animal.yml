@@ -1,0 +1,38 @@
+tags:
+  - Animals
+parameters:
+  - name: headers
+    in: header
+    name: Authorization
+    schema:
+      type: string
+      description: token
+    required: true
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object  
+      id: Animals
+      properties:
+        animal:
+          type: object
+          description: The animal is added
+          properties:
+            age:
+              type: number
+              description: Age of animal
+            species:
+              type: string
+              description: The name of animal
+            gender:
+              type: string
+              description: Gender of animal
+            special requirements:
+              type: string
+              description: Special requirements of animal
+responses:
+  201:
+    description: Animal added successfully
+  400:
+    description: Animal required

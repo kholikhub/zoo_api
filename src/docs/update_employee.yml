@@ -1,0 +1,131 @@
+tags:
+  - Employee
+parameters:
+  - name: headers
+    in: header
+    name: Authorization
+    schema:
+      type: string
+      description: token
+    required: true
+  - name: employee_id
+    in: path
+    required: true
+    schema:
+      type: integer
+      description: ID of the employee
+  - name: employee
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+            name:
+              type: string
+              description: Name of the employee
+            roles:
+              type: string
+              description: The roles of the employee
+            schedules:
+              type: array
+              description: Schedules of the employee
+              items:
+                type: object
+                properties:
+                  Hours:
+                    type: array
+                    description: Daily working hours
+                    items:
+                      type: object
+                      properties:
+                        Monday:
+                          type: array
+                          description: Monday working hours
+                          items:
+                            type: object
+                            properties:
+                              Start:
+                                type: string
+                                description: Start time on Monday
+                              Finish:
+                                type: string
+                                description: Finish time on Monday
+                        Tuesday:
+                          type: array
+                          description: Tuesday working hours
+                          items:
+                            type: object
+                            properties:
+                              Start:
+                                type: string
+                                description: Start time on Tuesday
+                              Finish:
+                                type: string
+                                description: Finish time on Tuesday
+                        Wednesday:
+                          type: array
+                          description: Wednesday working hours
+                          items:
+                            type: object
+                            properties:
+                              Start:
+                                type: string
+                                description: Start time on Wednesday
+                              Finish:
+                                type: string
+                                description: Finish time on Wednesday
+                        Thursday:
+                          type: array
+                          description: Thursday working hours
+                          items:
+                            type: object
+                            properties:
+                              Start:
+                                type: string
+                                description: Start time on Thursday
+                              Finish:
+                                type: string
+                                description: Finish time on Thursday
+                        Friday:
+                          type: array
+                          description: Friday working hours
+                          items:
+                            type: object
+                            properties:
+                              Start:
+                                type: string
+                                description: Start time on Friday
+                              Finish:
+                                type: string
+                                description: Finish time on Friday
+                        Saturday:
+                          type: array
+                          description: Saturday working hours
+                          items:
+                            type: object
+                            properties:
+                              Start:
+                                type: string
+                                description: Start time on Saturday
+                              Finish:
+                                type: string
+                                description: Finish time on Saturday
+                        Sunday:
+                          type: array
+                          description: Sunday working hours
+                          items:
+                            type: object
+                            properties:
+                              Start:
+                                type: string
+                                description: Start time on Sunday
+                              Finish:
+                                type: string
+                                description: Finish time on Sunday
+responses:
+  200:
+    description: Employee updated successfully
+  400:
+    description: Employee required
+  404:
+    description: Employee not found

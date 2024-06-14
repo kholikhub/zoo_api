@@ -1,0 +1,23 @@
+tags:
+  - Users
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      id: User
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          description: The username
+        password:
+          type: string
+          description: The password
+responses:
+  201:
+    description: User created
+  400:
+    description: Username and password required or user already exists

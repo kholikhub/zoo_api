@@ -1,0 +1,13 @@
+tags:
+  - Employee
+parameters:
+  - name: headers
+    in: header
+    name: Authorization
+    schema:
+      type: string
+      description: token
+    required: true
+responses:
+  200:
+    description: A list of all employee

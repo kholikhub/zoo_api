@@ -1,0 +1,21 @@
+tags:
+  - Animals
+parameters:
+  - name: headers
+    in: header
+    name: Authorization
+    schema:
+      type: string
+      description: token
+    required: true
+  - name: animal_id
+    in: path
+    required: true
+    schema:
+      type: string
+      description: animal name
+responses:
+  200:
+    description: Animal delete successfully
+  404:
+    description: Animal not found

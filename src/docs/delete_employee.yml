@@ -1,0 +1,21 @@
+tags:
+  - Employee
+parameters:
+  - name: headers
+    in: header
+    name: Authorization
+    schema:
+      type: string
+      description: token
+    required: true
+  - name: employee_id
+    in: path
+    required: true
+    schema:
+      type: string
+      description: employee name
+responses:
+  200:
+    description: Employee delete successfully
+  404:
+    description: Employee not found
